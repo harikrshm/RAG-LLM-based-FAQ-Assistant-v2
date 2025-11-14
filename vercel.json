@@ -50,9 +50,6 @@
         }
       ]
     }
-  ],
-  "env": {
-    "VITE_API_BASE_URL": "@api_base_url"
-  }
+  ]
 }
 

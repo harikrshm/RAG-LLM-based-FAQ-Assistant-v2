@@ -1,44 +1,37 @@
 # Complete Deployment Guide
 
-This is the comprehensive step-by-step guide for deploying the FAQ Assistant to production.
+This guide has been replaced with the Vercel Full-Stack Deployment Guide.
 
-## Table of Contents
+## Recommended: Vercel Full-Stack Deployment
 
-1. [Prerequisites](#prerequisites)
-2. [Quick Start](#quick-start)
-3. [Backend Deployment (Railway)](#backend-deployment-railway)
-4. [Frontend Deployment (Vercel)](#frontend-deployment-vercel)
-5. [Domain Configuration](#domain-configuration)
-6. [Environment Variables](#environment-variables)
-7. [Post-Deployment Verification](#post-deployment-verification)
-8. [Troubleshooting](#troubleshooting)
-9. [Maintenance](#maintenance)
+For the simplest deployment experience, deploy both frontend and backend to Vercel:
 
-## Prerequisites
+👉 **[See Vercel Full-Stack Deployment Guide](./VERCEL_FULL_STACK_DEPLOYMENT.md)**
 
-Before starting, ensure you have:
-
-- ✅ GitHub account with repository access
-- ✅ Railway account (sign up at https://railway.app)
-- ✅ Vercel account (sign up at https://vercel.com)
-- ✅ Domain name (optional, for custom domains)
-- ✅ Google Gemini API key (or other LLM provider key)
-- ✅ Basic knowledge of Git and command line
+This guide covers:
+- Deploying frontend and backend together on Vercel
+- Serverless function configuration
+- Environment variable setup
+- Testing and verification
+- Troubleshooting
 
 ## Quick Start
 
-**For experienced developers:**
+👉 **[See Quick Start Guide](../../VERCEL_QUICK_START.md)** - Deploy in 15 minutes
 
-1. **Backend**: Deploy to Railway (see [Backend Deployment](#backend-deployment-railway))
-2. **Frontend**: Deploy to Vercel (see [Frontend Deployment](#frontend-deployment-vercel))
-3. **Configure**: Set environment variables
-4. **Verify**: Test endpoints and widget
+## Alternative Deployment Options
 
-**Estimated time**: 30-45 minutes
+For other deployment scenarios, see:
+- **[General Deployment Guide](./DEPLOYMENT.md)** - Docker, AWS, GCP, etc.
+- **[Vercel Frontend Only](./VERCEL_DEPLOYMENT.md)** - Frontend-only deployment
 
 ---
 
-## Backend Deployment (Railway)
+## Legacy Railway Deployment (Deprecated)
+
+This guide previously covered Railway deployment, which has been replaced with Vercel full-stack deployment.
+
+For Railway deployment instructions, please refer to the Vercel guide or use Docker deployment.
 
 ### Step 1: Prepare Railway Account
 

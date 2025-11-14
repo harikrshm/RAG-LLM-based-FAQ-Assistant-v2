@@ -1,0 +1,222 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2024-11-14",
+  "base_url": "https://groww.in",
+  "amc_mappings": {
+    "hdfc": "hdfc-mutual-funds",
+    "hdfc mutual fund": "hdfc-mutual-funds",
+    "hdfc mutual": "hdfc-mutual-funds",
+    "sbi": "sbi-mutual-funds",
+    "sbi mutual fund": "sbi-mutual-funds",
+    "sbi mutual": "sbi-mutual-funds",
+    "icici": "icici-prudential-mutual-funds",
+    "icici prudential": "icici-prudential-mutual-funds",
+    "icici prudential mutual fund": "icici-prudential-mutual-funds",
+    "axis": "axis-mutual-funds",
+    "axis mutual fund": "axis-mutual-funds",
+    "axis mutual": "axis-mutual-funds",
+    "nippon": "nippon-india-mutual-funds",
+    "nippon india": "nippon-india-mutual-funds",
+    "nippon india mutual fund": "nippon-india-mutual-funds",
+    "reliance": "nippon-india-mutual-funds",
+    "reliance mutual fund": "nippon-india-mutual-funds"
+  },
+  "url_patterns": {
+    "fund_details": {
+      "pattern": "/mutual-funds/{fund_slug}",
+      "description": "Individual fund detail page",
+      "example": "/mutual-funds/hdfc-equity-fund-direct-growth"
+    },
+    "amc_overview": {
+      "pattern": "/mutual-funds/amc/{amc_slug}",
+      "description": "AMC overview page",
+      "example": "/mutual-funds/amc/hdfc-mutual-funds"
+    },
+    "amc_funds_list": {
+      "pattern": "/mutual-funds/top/best-{amc_name}-equity-mutual-funds",
+      "description": "List of funds by AMC",
+      "example": "/mutual-funds/top/best-hdfc-equity-mutual-funds"
+    },
+    "fund_performance": {
+      "pattern": "/mutual-funds/{fund_slug}",
+      "section": "#performance",
+      "description": "Fund performance section",
+      "example": "/mutual-funds/hdfc-equity-fund-direct-growth#performance"
+    },
+    "fund_comparison": {
+      "pattern": "/mutual-funds/compare",
+      "description": "Fund comparison page",
+      "example": "/mutual-funds/compare"
+    },
+    "category_funds": {
+      "pattern": "/mutual-funds/top/{category}",
+      "description": "Funds by category",
+      "example": "/mutual-funds/top/equity-funds"
+    },
+    "blog_article": {
+      "pattern": "/blog/{article_slug}",
+      "description": "Blog articles about mutual funds",
+      "example": "/blog/mutual-fund-basics"
+    }
+  },
+  "query_patterns": {
+    "fund_details": [
+      "expense ratio",
+      "exit load",
+      "minimum sip",
+      "minimum investment",
+      "lock-in period",
+      "nav",
+      "aum",
+      "assets under management",
+      "fund details",
+      "scheme details",
+      "fund overview",
+      "what is the expense ratio",
+      "what is the exit load",
+      "minimum sip amount",
+      "fund information"
+    ],
+    "amc_overview": [
+      "amc",
+      "asset management company",
+      "about amc",
+      "amc overview",
+      "funds by",
+      "funds from",
+      "funds offered by"
+    ],
+    "fund_performance": [
+      "returns",
+      "performance",
+      "growth",
+      "fund performance",
+      "how has the fund performed",
+      "fund returns",
+      "cagr",
+      "absolute returns"
+    ],
+    "fund_comparison": [
+      "compare",
+      "comparison",
+      "versus",
+      "vs",
+      "difference between",
+      "which is better",
+      "compare funds"
+    ],
+    "amc_funds_list": [
+      "list of funds",
+      "funds list",
+      "all funds by",
+      "funds from amc"
+    ],
+    "category_funds": [
+      "equity funds",
+      "debt funds",
+      "hybrid funds",
+      "elss funds",
+      "top funds",
+      "best funds"
+    ]
+  },
+  "information_categories": {
+    "fund_details": {
+      "keywords": [
+        "fund",
+        "scheme",
+        "details",
+        "overview",
+        "expense ratio",
+        "exit load",
+        "minimum sip"
+      ],
+      "groww_available": true,
+      "priority": 1
+    },
+    "amc_overview": {
+      "keywords": [
+        "amc",
+        "asset management",
+        "company"
+      ],
+      "groww_available": true,
+      "priority": 2
+    },
+    "fund_performance": {
+      "keywords": [
+        "returns",
+        "performance",
+        "growth",
+        "cagr"
+      ],
+      "groww_available": true,
+      "priority": 1
+    },
+    "fund_comparison": {
+      "keywords": [
+        "compare",
+        "comparison",
+        "versus"
+      ],
+      "groww_available": true,
+      "priority": 2
+    },
+    "amc_funds_list": {
+      "keywords": [
+        "funds list",
+        "all funds"
+      ],
+      "groww_available": true,
+      "priority": 2
+    },
+    "category_funds": {
+      "keywords": [
+        "category",
+        "type",
+        "equity",
+        "debt"
+      ],
+      "groww_available": true,
+      "priority": 2
+    },
+    "blog_article": {
+      "keywords": [
+        "blog",
+        "article",
+        "guide",
+        "learn"
+      ],
+      "groww_available": true,
+      "priority": 3
+    }
+  },
+  "page_sections": {
+    "expense_ratio": {
+      "section_id": "#expense-ratio",
+      "description": "Expense ratio section on fund page"
+    },
+    "exit_load": {
+      "section_id": "#exit-load",
+      "description": "Exit load section on fund page"
+    },
+    "investment_details": {
+      "section_id": "#investment-details",
+      "description": "Investment details including minimum SIP"
+    },
+    "performance": {
+      "section_id": "#performance",
+      "description": "Performance metrics and returns"
+    },
+    "fund_facts": {
+      "section_id": "#fund-facts",
+      "description": "Key facts about the fund"
+    }
+  },
+  "fallback_behavior": {
+    "check_groww_first": true,
+    "fallback_to_external": true,
+    "generic_fallback_message": "For more information, please visit the official AMC, SEBI, or AMFI websites."
+  }
+}
+

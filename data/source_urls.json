@@ -1,0 +1,77 @@
+{
+  "amcs": [
+    {
+      "name": "SBI Mutual Fund",
+      "amc_id": "sbi",
+      "urls": [
+        "https://groww.in/mutual-funds/amc/sbi-mutual-funds"
+      ]
+    },
+    {
+      "name": "HDFC Mutual Fund",
+      "amc_id": "hdfc",
+      "urls": [
+        "https://groww.in/mutual-funds/amc/hdfc-mutual-funds",
+        "https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth",
+        "https://groww.in/mutual-funds/top/best-hdfc-equity-mutual-funds",
+        "https://groww.in/mutual-funds/hdfc-focused-fund-direct-growth",
+        "https://groww.in/mutual-funds/hdfc-manufacturing-fund-direct-growth",
+        "https://groww.in/mutual-funds/hdfc-banking-financial-services-fund-direct-growth"
+      ]
+    },
+    {
+      "name": "ICICI Prudential Mutual Fund",
+      "amc_id": "icici-prudential",
+      "urls": [
+        "https://groww.in/mutual-funds/amc/icici-prudential-mutual-funds",
+        "https://groww.in/mutual-funds/icici-prudential-technology-fund-direct-growth",
+        "https://groww.in/mutual-funds/top/best-icici-prudential-equity-mutual-funds",
+        "https://groww.in/blog/best-icici-prudential-mutual-funds",
+        "https://groww.in/mutual-funds/icici-prudential-infrastructure-fund-direct-growth",
+        "https://groww.in/mutual-funds/icici-prudential-dynamic-plan-direct-growth",
+        "https://groww.in/mutual-funds/icici-prudential-balanced-direct-growth",
+        "https://groww.in/mutual-funds/icici-prudential-regular-savings-fund-direct-growth",
+        "https://groww.in/mutual-funds/icici-prudential-nifty-index-fund-direct-growth"
+      ]
+    },
+    {
+      "name": "Axis Mutual Fund",
+      "amc_id": "axis",
+      "urls": [
+        "https://groww.in/mutual-funds/amc/axis-mutual-funds",
+        "https://groww.in/mutual-funds/top/best-axis-equity-mutual-funds",
+        "https://groww.in/mutual-funds/axis-small-cap-fund-direct-growth",
+        "https://groww.in/mutual-funds/axis-growth-opportunities-fund-direct-growth",
+        "https://groww.in/mutual-funds/axis-gold-fund-direct-growth",
+        "https://groww.in/mutual-funds/axis-elss-tax-saver-direct-plan-growth",
+        "https://groww.in/mutual-funds/axis-large-cap-fund-direct-growth",
+        "https://groww.in/mutual-funds/axis-multicap-fund-direct-growth",
+        "https://groww.in/mutual-funds/axis-consumption-fund-direct-growth",
+        "https://groww.in/mutual-funds/axis-momentum-fund-direct-growth"
+      ]
+    },
+    {
+      "name": "Nippon India Mutual Fund",
+      "amc_id": "nippon-india",
+      "urls": [
+        "https://groww.in/mutual-funds/amc/nippon-india-mutual-funds",
+        "https://groww.in/mutual-funds/nippon-india-small-cap-fund-direct-growth",
+        "https://groww.in/mutual-funds/nippon-india-growth-fund-direct-growth",
+        "https://groww.in/mutual-funds/nippon-india-large-cap-fund-direct-growth",
+        "https://groww.in/mutual-funds/nippon-india-multi-cap-fund-direct-growth",
+        "https://groww.in/mutual-funds/top/best-nippon-india-equity-mutual-funds",
+        "https://groww.in/mutual-funds/nippon-india-multi-asset-allocation-fund-direct-growth",
+        "https://groww.in/mutual-funds/top/best-reliance-debt-mutual-funds",
+        "https://groww.in/mutual-funds/top/best-nippon-india-debt-mutual-funds"
+      ]
+    }
+  ],
+  "metadata": {
+    "total_amcs": 5,
+    "total_urls": 35,
+    "source_type": "groww",
+    "created_date": "2025-11-14",
+    "description": "Source URLs for 5 AMC mutual fund schemes from Groww website"
+  }
+}
+

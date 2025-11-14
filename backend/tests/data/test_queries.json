@@ -1,0 +1,424 @@
+{
+  "version": "1.0",
+  "description": "Test dataset with sample queries and expected responses for FAQ Assistant",
+  "queries": [
+    {
+      "id": "query_001",
+      "category": "fund_details",
+      "query": "What is the expense ratio of HDFC Equity Fund?",
+      "expected_keywords": ["expense ratio", "HDFC", "equity fund"],
+      "expected_sources": ["hdfc", "amfi", "sebi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "expense ratio",
+        "percentage",
+        "HDFC"
+      ],
+      "should_not_contain": [
+        "investment advice",
+        "you should",
+        "recommend"
+      ]
+    },
+    {
+      "id": "query_002",
+      "category": "general_info",
+      "query": "What is a mutual fund?",
+      "expected_keywords": ["mutual fund", "investment", "securities"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.8,
+      "expected_response_type": "definition",
+      "should_contain": [
+        "mutual fund",
+        "investment",
+        "pool",
+        "securities"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "best fund",
+        "guaranteed returns"
+      ]
+    },
+    {
+      "id": "query_003",
+      "category": "sip_info",
+      "query": "How much should I invest in SIP?",
+      "expected_keywords": ["SIP", "systematic investment plan", "amount"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.6,
+      "expected_response_type": "informational",
+      "should_contain": [
+        "SIP",
+        "systematic investment plan",
+        "minimum"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "invest X amount",
+        "recommended amount"
+      ],
+      "note": "Should provide general information, not specific investment advice"
+    },
+    {
+      "id": "query_004",
+      "category": "fund_comparison",
+      "query": "What is the difference between equity and debt funds?",
+      "expected_keywords": ["equity", "debt", "difference", "risk"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.75,
+      "expected_response_type": "comparison",
+      "should_contain": [
+        "equity",
+        "debt",
+        "difference",
+        "risk",
+        "returns"
+      ],
+      "should_not_contain": [
+        "you should choose",
+        "better option",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_005",
+      "category": "tax_info",
+      "query": "What are the tax benefits of ELSS funds?",
+      "expected_keywords": ["ELSS", "tax", "benefits", "deduction"],
+      "expected_sources": ["sebi", "tax authority"],
+      "min_confidence": 0.7,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "ELSS",
+        "tax",
+        "deduction",
+        "section 80C"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "best tax saving",
+        "guaranteed tax benefit"
+      ]
+    },
+    {
+      "id": "query_006",
+      "category": "fund_details",
+      "query": "What is NAV in mutual funds?",
+      "expected_keywords": ["NAV", "net asset value", "price"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.8,
+      "expected_response_type": "definition",
+      "should_contain": [
+        "NAV",
+        "net asset value",
+        "price",
+        "units"
+      ],
+      "should_not_contain": [
+        "buy when NAV is low",
+        "best NAV",
+        "timing"
+      ]
+    },
+    {
+      "id": "query_007",
+      "category": "amc_info",
+      "query": "What funds does SBI Mutual Fund offer?",
+      "expected_keywords": ["SBI", "mutual fund", "funds"],
+      "expected_sources": ["sbi", "amfi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "list",
+      "should_contain": [
+        "SBI",
+        "mutual fund",
+        "funds"
+      ],
+      "should_not_contain": [
+        "best SBI fund",
+        "you should invest",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_008",
+      "category": "general_info",
+      "query": "Explain systematic investment plan",
+      "expected_keywords": ["SIP", "systematic", "investment", "plan"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.75,
+      "expected_response_type": "explanation",
+      "should_contain": [
+        "SIP",
+        "systematic",
+        "investment",
+        "regular",
+        "installments"
+      ],
+      "should_not_contain": [
+        "you should start SIP",
+        "best SIP amount",
+        "recommended frequency"
+      ]
+    },
+    {
+      "id": "query_009",
+      "category": "risk_info",
+      "query": "What are the risks of investing in mutual funds?",
+      "expected_keywords": ["risk", "mutual fund", "market", "volatility"],
+      "expected_sources": ["sebi", "amfi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "informational",
+      "should_contain": [
+        "risk",
+        "market",
+        "volatility",
+        "no guarantee"
+      ],
+      "should_not_contain": [
+        "you should avoid",
+        "safe investment",
+        "risk-free"
+      ]
+    },
+    {
+      "id": "query_010",
+      "category": "fund_details",
+      "query": "What is the minimum investment amount for ICICI Prudential Bluechip Fund?",
+      "expected_keywords": ["minimum", "investment", "ICICI", "bluechip"],
+      "expected_sources": ["icici", "amfi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "minimum",
+        "investment",
+        "ICICI",
+        "amount"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "recommended amount",
+        "best amount"
+      ]
+    },
+    {
+      "id": "query_011",
+      "category": "fund_performance",
+      "query": "What is the historical performance of Axis Long Term Equity Fund?",
+      "expected_keywords": ["performance", "Axis", "long term", "equity"],
+      "expected_sources": ["axis", "amfi"],
+      "min_confidence": 0.6,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "performance",
+        "Axis",
+        "returns",
+        "historical"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "best performance",
+        "guaranteed returns"
+      ]
+    },
+    {
+      "id": "query_012",
+      "category": "general_info",
+      "query": "How to calculate returns on mutual funds?",
+      "expected_keywords": ["calculate", "returns", "mutual fund", "formula"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "informational",
+      "should_contain": [
+        "calculate",
+        "returns",
+        "NAV",
+        "formula"
+      ],
+      "should_not_contain": [
+        "you will get",
+        "guaranteed returns",
+        "expected returns"
+      ]
+    },
+    {
+      "id": "query_013",
+      "category": "fund_selection",
+      "query": "How to choose a mutual fund?",
+      "expected_keywords": ["choose", "mutual fund", "factors", "consider"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "informational",
+      "should_contain": [
+        "factors",
+        "consider",
+        "risk",
+        "objectives"
+      ],
+      "should_not_contain": [
+        "you should choose",
+        "best fund",
+        "recommended fund"
+      ],
+      "note": "Should provide general guidance, not specific recommendations"
+    },
+    {
+      "id": "query_014",
+      "category": "fund_details",
+      "query": "What is the lock-in period for ELSS funds?",
+      "expected_keywords": ["lock-in", "ELSS", "period", "years"],
+      "expected_sources": ["sebi", "amfi"],
+      "min_confidence": 0.8,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "lock-in",
+        "ELSS",
+        "period",
+        "years"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "best lock-in",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_015",
+      "category": "category_info",
+      "query": "What are large cap mutual funds?",
+      "expected_keywords": ["large cap", "mutual fund", "market capitalization"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.75,
+      "expected_response_type": "definition",
+      "should_contain": [
+        "large cap",
+        "market capitalization",
+        "companies",
+        "top"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "best large cap",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_016",
+      "category": "fund_details",
+      "query": "What is the exit load for Kotak Standard Multicap Fund?",
+      "expected_keywords": ["exit load", "Kotak", "multicap"],
+      "expected_sources": ["kotak", "amfi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "exit load",
+        "Kotak",
+        "percentage"
+      ],
+      "should_not_contain": [
+        "you should avoid",
+        "best exit load",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_017",
+      "category": "general_info",
+      "query": "What is asset allocation in mutual funds?",
+      "expected_keywords": ["asset allocation", "mutual fund", "diversification"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.7,
+      "expected_response_type": "definition",
+      "should_contain": [
+        "asset allocation",
+        "diversification",
+        "portfolio",
+        "assets"
+      ],
+      "should_not_contain": [
+        "you should allocate",
+        "best allocation",
+        "recommended allocation"
+      ]
+    },
+    {
+      "id": "query_018",
+      "category": "fund_comparison",
+      "query": "What is the difference between growth and dividend options?",
+      "expected_keywords": ["growth", "dividend", "difference", "option"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.75,
+      "expected_response_type": "comparison",
+      "should_contain": [
+        "growth",
+        "dividend",
+        "difference",
+        "option"
+      ],
+      "should_not_contain": [
+        "you should choose",
+        "better option",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_019",
+      "category": "fund_details",
+      "query": "What is the AUM of Reliance Mutual Fund?",
+      "expected_keywords": ["AUM", "assets under management", "Reliance"],
+      "expected_sources": ["reliance", "amfi"],
+      "min_confidence": 0.6,
+      "expected_response_type": "factual",
+      "should_contain": [
+        "AUM",
+        "assets under management",
+        "Reliance"
+      ],
+      "should_not_contain": [
+        "you should invest",
+        "best AUM",
+        "recommended"
+      ]
+    },
+    {
+      "id": "query_020",
+      "category": "general_info",
+      "query": "What is a fund manager?",
+      "expected_keywords": ["fund manager", "mutual fund", "manages"],
+      "expected_sources": ["amfi", "sebi"],
+      "min_confidence": 0.8,
+      "expected_response_type": "definition",
+      "should_contain": [
+        "fund manager",
+        "manages",
+        "portfolio",
+        "investment decisions"
+      ],
+      "should_not_contain": [
+        "you should choose",
+        "best fund manager",
+        "recommended"
+      ]
+    }
+  ],
+  "categories": {
+    "fund_details": "Queries about specific fund details (expense ratio, NAV, etc.)",
+    "general_info": "General information about mutual funds",
+    "sip_info": "Information about Systematic Investment Plans",
+    "fund_comparison": "Comparison between different fund types",
+    "tax_info": "Tax-related information",
+    "amc_info": "Information about Asset Management Companies",
+    "risk_info": "Information about risks",
+    "fund_performance": "Historical performance data",
+    "fund_selection": "Guidance on selecting funds",
+    "category_info": "Information about fund categories"
+  },
+  "metadata": {
+    "total_queries": 20,
+    "created_date": "2024-01-01",
+    "last_updated": "2024-01-01",
+    "version": "1.0"
+  }
+}
+

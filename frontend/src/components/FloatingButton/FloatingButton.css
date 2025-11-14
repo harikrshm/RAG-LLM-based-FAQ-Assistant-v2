@@ -1,0 +1,145 @@
+/**
+ * FloatingButton Styles
+ */
+
+.floating-button {
+  position: fixed;
+  bottom: var(--chat-button-bottom);
+  right: var(--chat-button-right);
+  width: var(--chat-button-size);
+  height: var(--chat-button-size);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  box-shadow: var(--chat-button-shadow);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-all);
+  z-index: var(--z-index-chat-widget);
+  position: relative;
+}
+
+.floating-button:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.floating-button:active {
+  background-color: var(--color-primary-active);
+  transform: scale(0.95);
+}
+
+.floating-button:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Icon styling */
+.floating-button__icon {
+  width: var(--chat-button-icon-size);
+  height: var(--chat-button-icon-size);
+  transition: var(--transition-transform);
+}
+
+/* Rotate animation when opening */
+.floating-button--open .floating-button__icon {
+  transform: rotate(90deg);
+}
+
+/* Unread message badge */
+.floating-button__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-error);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-bg-primary);
+  font-size: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .floating-button {
+    bottom: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 56px;
+    height: 56px;
+  }
+  
+  .floating-button__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .floating-button {
+    width: var(--chat-button-size);
+    height: var(--chat-button-size);
+  }
+
+  .floating-button__icon {
+    width: var(--chat-button-icon-size);
+    height: var(--chat-button-icon-size);
+  }
+}
+
+/* Medium Desktop: Larger button */
+@media (min-width: 1281px) and (max-width: 1536px) {
+  .floating-button {
+    width: var(--chat-button-size);
+    height: var(--chat-button-size);
+  }
+
+  .floating-button__icon {
+    width: var(--chat-button-icon-size);
+    height: var(--chat-button-icon-size);
+  }
+
+  .floating-button__badge {
+    width: 14px;
+    height: 14px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Large Desktop: Extra large button */
+@media (min-width: 1537px) {
+  .floating-button {
+    width: var(--chat-button-size);
+    height: var(--chat-button-size);
+  }
+
+  .floating-button__icon {
+    width: var(--chat-button-icon-size);
+    height: var(--chat-button-icon-size);
+  }
+
+  .floating-button__badge {
+    width: 16px;
+    height: 16px;
+    top: 12px;
+    right: 12px;
+  }
+}
+

@@ -1,0 +1,428 @@
+/**
+ * Groww Design Tokens
+ * 
+ * CSS custom properties mapping Groww's design system to the FAQ chat widget.
+ * Based on design tokens documented in docs/DESIGN_TOKENS.md
+ */
+
+:root {
+  /* ==================== COLOR PALETTE ==================== */
+  
+  /* Brand Colors - Groww Green */
+  --color-primary: #00D09C;
+  --color-primary-hover: #00B887;
+  --color-primary-active: #009F75;
+  --color-primary-light: #E6F9F5;
+  --color-primary-lighter: #F0FBF8;
+  
+  /* Secondary Colors */
+  --color-secondary: #5367FC;
+  --color-secondary-hover: #4257E8;
+  --color-secondary-light: #EEF0FF;
+  
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9FAFB;
+  --color-bg-tertiary: #F3F4F6;
+  --color-bg-hover: #F5F7FA;
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
+  
+  /* Text Colors */
+  --color-text-primary: #222222;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-text-disabled: #CCCCCC;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #5367FC;
+  --color-text-link-hover: #4257E8;
+  
+  /* Border Colors */
+  --color-border-primary: #E5E7EB;
+  --color-border-secondary: #D1D5DB;
+  --color-border-focus: #00D09C;
+  --color-border-error: #EF4444;
+  
+  /* Semantic Colors */
+  --color-success: #10B981;
+  --color-success-light: #D1FAE5;
+  --color-success-dark: #059669;
+  
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+  --color-warning-dark: #D97706;
+  
+  --color-error: #EF4444;
+  --color-error-light: #FEE2E2;
+  --color-error-dark: #DC2626;
+  
+  --color-info: #3B82F6;
+  --color-info-light: #DBEAFE;
+  --color-info-dark: #2563EB;
+  
+  /* Chat Widget Colors */
+  --color-chat-bg: #FFFFFF;
+  --color-chat-header-bg: #00D09C;
+  --color-chat-header-text: #FFFFFF;
+  --color-chat-input-bg: #F9FAFB;
+  --color-chat-input-border: #E5E7EB;
+  --color-chat-input-focus: #00D09C;
+  
+  /* Message Bubble Colors */
+  --color-message-user-bg: #00D09C;
+  --color-message-user-text: #FFFFFF;
+  --color-message-bot-bg: #F3F4F6;
+  --color-message-bot-text: #222222;
+  --color-message-timestamp: #999999;
+  
+  /* Source/Citation Colors */
+  --color-source-bg: #F0FBF8;
+  --color-source-border: #00D09C;
+  --color-source-link: #5367FC;
+  --color-source-link-hover: #4257E8;
+  
+  
+  /* ==================== TYPOGRAPHY ==================== */
+  
+  /* Font Families */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                         "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", 
+                      Consolas, "Courier New", monospace;
+  
+  /* Font Sizes (base: 16px) */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Chat Typography */
+  --chat-header-font-size: var(--font-size-lg);
+  --chat-header-font-weight: var(--font-weight-semibold);
+  --chat-message-font-size: var(--font-size-base);
+  --chat-message-line-height: var(--line-height-normal);
+  --chat-timestamp-font-size: var(--font-size-xs);
+  --chat-timestamp-font-weight: var(--font-weight-normal);
+  --chat-source-font-size: var(--font-size-sm);
+  --chat-source-font-weight: var(--font-weight-medium);
+  
+  
+  /* ==================== SPACING ==================== */
+  
+  /* Base Spacing Scale (base unit: 4px) */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+  
+  /* Chat Spacing */
+  --chat-padding: var(--spacing-4);
+  --chat-message-gap: var(--spacing-3);
+  --chat-bubble-padding-x: var(--spacing-4);
+  --chat-bubble-padding-y: var(--spacing-3);
+  --chat-input-padding: var(--spacing-3);
+  --chat-source-padding: var(--spacing-3);
+  
+  
+  /* ==================== BORDER RADIUS ==================== */
+  
+  --radius-none: 0;
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-base: 0.375rem; /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;   /* Fully rounded */
+  
+  /* Chat Border Radius */
+  --chat-widget-radius: var(--radius-lg);
+  --chat-bubble-radius: var(--radius-md);
+  --chat-input-radius: var(--radius-md);
+  --chat-button-radius: var(--radius-base);
+  
+  
+  /* ==================== SHADOWS ==================== */
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 
+                 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+               0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+               0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+               0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Chat Shadows */
+  --chat-widget-shadow: var(--shadow-xl);
+  --chat-bubble-shadow: var(--shadow-sm);
+  --chat-button-shadow: var(--shadow-base);
+  
+  
+  /* ==================== TRANSITIONS ==================== */
+  
+  /* Duration */
+  --transition-fast: 150ms;
+  --transition-base: 200ms;
+  --transition-slow: 300ms;
+  --transition-slower: 500ms;
+  
+  /* Easing Functions */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Common Transitions */
+  --transition-colors: color var(--transition-base) var(--ease-in-out),
+                       background-color var(--transition-base) var(--ease-in-out),
+                       border-color var(--transition-base) var(--ease-in-out);
+  --transition-transform: transform var(--transition-base) var(--ease-in-out);
+  --transition-all: all var(--transition-base) var(--ease-in-out);
+  
+  
+  /* ==================== Z-INDEX ==================== */
+  
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-chat-widget: 1100;
+  
+  
+  /* ==================== WIDGET DIMENSIONS ==================== */
+  
+  /* Chat Widget Size */
+  --chat-widget-width: 400px;
+  --chat-widget-height: 600px;
+  --chat-widget-max-height: 80vh;
+  --chat-widget-min-height: 400px;
+  
+  /* Chat Button Size */
+  --chat-button-size: 60px;
+  --chat-button-icon-size: 28px;
+  
+  /* Message Constraints */
+  --chat-message-max-width: 85%;
+  --chat-input-max-height: 120px;
+  --chat-input-min-height: 44px;
+  
+  /* Header Height */
+  --chat-header-height: 60px;
+  --chat-footer-height: auto;
+  
+  
+  /* ==================== WIDGET POSITIONING ==================== */
+  
+  /* Chat Widget Position (bottom-right) */
+  --chat-position-bottom: 24px;
+  --chat-position-right: 24px;
+  
+  /* Chat Button Position */
+  --chat-button-bottom: 24px;
+  --chat-button-right: 24px;
+  
+  
+  /* ==================== ICON SIZES ==================== */
+  
+  --icon-xs: 12px;
+  --icon-sm: 16px;
+  --icon-base: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  --icon-xl: 40px;
+  
+  
+  /* ==================== BREAKPOINTS ==================== */
+  
+  /* Note: CSS custom properties can't be used in media queries directly.
+     These are for documentation and JavaScript usage. */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+/* Mobile: Adjust chat widget to be full screen on small devices */
+@media (max-width: 640px) {
+  :root {
+    --chat-widget-width: 100vw;
+    --chat-widget-height: 100vh;
+    --chat-widget-max-height: 100vh;
+    --chat-position-bottom: 0;
+    --chat-position-right: 0;
+    --chat-button-bottom: 16px;
+    --chat-button-right: 16px;
+    --chat-button-size: 56px;
+  }
+}
+
+/* Tablet: Slightly smaller chat widget */
+@media (min-width: 641px) and (max-width: 1024px) {
+  :root {
+    --chat-widget-width: 360px;
+    --chat-widget-height: 500px;
+    --chat-widget-max-height: 75vh;
+    --chat-position-bottom: 20px;
+    --chat-position-right: 20px;
+  }
+}
+
+/* Small Desktop (1025px - 1280px): Standard widget size */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  :root {
+    --chat-widget-width: 400px;
+    --chat-widget-height: 600px;
+    --chat-widget-max-height: 80vh;
+    --chat-position-bottom: 24px;
+    --chat-position-right: 24px;
+    --chat-button-size: 60px;
+    --chat-button-icon-size: 28px;
+  }
+}
+
+/* Medium Desktop (1281px - 1536px): Slightly larger widget */
+@media (min-width: 1281px) and (max-width: 1536px) {
+  :root {
+    --chat-widget-width: 420px;
+    --chat-widget-height: 650px;
+    --chat-widget-max-height: 82vh;
+    --chat-position-bottom: 28px;
+    --chat-position-right: 28px;
+    --chat-button-size: 64px;
+    --chat-button-icon-size: 30px;
+    --chat-header-height: 64px;
+    --chat-padding: var(--spacing-5);
+  }
+}
+
+/* Large Desktop (1537px+): Larger widget with more spacing */
+@media (min-width: 1537px) {
+  :root {
+    --chat-widget-width: 450px;
+    --chat-widget-height: 700px;
+    --chat-widget-max-height: 85vh;
+    --chat-position-bottom: 32px;
+    --chat-position-right: 32px;
+    --chat-button-size: 68px;
+    --chat-button-icon-size: 32px;
+    --chat-header-height: 68px;
+    --chat-padding: var(--spacing-6);
+    --chat-message-gap: var(--spacing-4);
+    --chat-bubble-padding-x: var(--spacing-5);
+    --chat-bubble-padding-y: var(--spacing-4);
+  }
+}
+
+/* ==================== DARK MODE SUPPORT (Future) ==================== */
+
+/* Dark mode tokens - can be enabled via @media (prefers-color-scheme: dark) */
+@media (prefers-color-scheme: dark) {
+  /* Uncomment to enable dark mode */
+  /*
+  :root {
+    --color-bg-primary: #1F2937;
+    --color-bg-secondary: #111827;
+    --color-bg-tertiary: #374151;
+    --color-text-primary: #F9FAFB;
+    --color-text-secondary: #D1D5DB;
+    --color-text-tertiary: #9CA3AF;
+    --color-border-primary: #374151;
+    --color-border-secondary: #4B5563;
+    --color-chat-bg: #1F2937;
+    --color-chat-input-bg: #374151;
+    --color-message-bot-bg: #374151;
+    --color-message-bot-text: #F9FAFB;
+  }
+  */
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Screen reader only (accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible styles for accessibility */
+.focus-visible:focus {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Truncate text with ellipsis */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Line clamp (multi-line truncation) */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+

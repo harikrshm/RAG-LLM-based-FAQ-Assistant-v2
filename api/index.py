@@ -14,11 +14,12 @@ from mangum import Mangum
 from backend.main import app
 
 # Create ASGI adapter for Vercel
-handler = Mangum(app, lifespan="off")
+mangum_handler = Mangum(app, lifespan="off")
 
-def lambda_handler(event, context):
+# Vercel expects the handler function to be named 'handler'
+def handler(event, context):
     """
-    AWS Lambda handler (Vercel uses AWS Lambda under the hood)
+    Vercel serverless function handler
     """
-    return handler(event, context)
+    return mangum_handler(event, context)
 

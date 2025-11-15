@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.*",
+    "src/**/*.spec.*",
+    "src/**/__tests__/**",
+    "src/test/**",
+    "storybook-static",
+    "vite-env.d.ts"
+  ]
+}
+

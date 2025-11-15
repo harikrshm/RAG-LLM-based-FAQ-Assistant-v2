@@ -95,9 +95,6 @@ export interface ParsedLink {
 }
 
 export function parseLinks(text: string): ParsedLink[] {
-  const parts: ParsedLink[] = [];
-  let lastIndex = 0;
-  
   // First, handle markdown-style links [text](url)
   const markdownMatches = Array.from(text.matchAll(MARKDOWN_LINK_REGEX));
   

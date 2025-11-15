@@ -4,13 +4,21 @@ Application Settings
 Configuration management using environment variables.
 """
 
-from typing import List, Literal, Optional
+import json
+from typing import List, Literal, Optional, Union
 
-from pydantic_settings import BaseSettings
+from pydantic import field_validator
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
+    
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=True,
+    )
 
     # Application
     APP_NAME: str = "Mutual Funds FAQ Assistant"
@@ -25,7 +33,7 @@ class Settings(BaseSettings):
     # Logging
     LOG_LEVEL: str = "INFO"
 
-    # CORS
+    # CORS - Default to localhost for development
     CORS_ORIGINS: List[str] = [
         "http://localhost:3000",
         "http://localhost:5173",
@@ -33,28 +41,59 @@ class Settings(BaseSettings):
         "http://127.0.0.1:5173",
     ]
     
-    # Allow CORS from environment variable (comma-separated)
-    CORS_ORIGINS_ENV: Optional[str] = None
-    
     # CORS configuration for widget embedding
     CORS_ALLOW_CREDENTIALS: bool = True
     CORS_MAX_AGE: int = 3600  # Cache preflight requests for 1 hour
     
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def _parse_cors_origins(cls, v: Union[str, List[str], None]) -> List[str]:
+        """
+        Parse CORS_ORIGINS from environment variable.
+        Handles JSON arrays, comma-separated strings, or lists.
+        
+        Args:
+            v: Value from environment (string, list, or None)
+            
+        Returns:
+            List of CORS origin strings
+        """
+        # Allow missing/empty
+        if v is None:
+            return []
+        
+        # Already a list
+        if isinstance(v, list):
+            return [str(origin).strip() for origin in v if str(origin).strip()]
+        
+        # Handle string input
+        if isinstance(v, str):
+            s = v.strip()
+            
+            # Empty string
+            if not s:
+                return []
+            
+            # Try JSON first (e.g., '["https://example.com"]')
+            try:
+                parsed = json.loads(s)
+                if isinstance(parsed, list):
+                    return [str(origin).strip() for origin in parsed if str(origin).strip()]
+            except (json.JSONDecodeError, TypeError):
+                # Fallback: comma-separated string (e.g., "https://a.com,https://b.com")
+                return [origin.strip() for origin in s.split(",") if origin.strip()]
+        
+        # Fallback safe default
+        return []
+    
     def get_cors_origins(self) -> List[str]:
         """
-        Get CORS origins, prioritizing environment variable if set.
+        Get CORS origins (backward compatibility method).
         
         Returns:
             List of allowed CORS origins
         """
-        if self.CORS_ORIGINS_ENV:
-            # Parse comma-separated string from environment
-            origins = [origin.strip() for origin in self.CORS_ORIGINS_ENV.split(",")]
-            # Filter out empty strings
-            origins = [origin for origin in origins if origin]
-            if origins:
-                return origins
-        return self.CORS_ORIGINS
+        return self.CORS_ORIGINS if self.CORS_ORIGINS else []
 
     # Vector Database
     VECTORDB_PATH: str = "data/vectordb"
@@ -94,11 +133,6 @@ class Settings(BaseSettings):
     # Groww Page Mapping
     GROWW_BASE_URL: str = "https://groww.in"
     GROWW_MAPPINGS_PATH: str = "backend/config/groww_page_mappings.json"
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = True
 
 
 # Create settings instance

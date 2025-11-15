@@ -43,13 +43,11 @@ export class ApiError extends Error {
 
 class ApiClient {
   private client: AxiosInstance | null = null;
-  private _config: ApiClientConfig | null = null;
 
   /**
    * Initialize the API client with configuration
    */
   init(config: ApiClientConfig): void {
-    this._config = config;
 
     this.client = axios.create({
       baseURL: config.baseURL,

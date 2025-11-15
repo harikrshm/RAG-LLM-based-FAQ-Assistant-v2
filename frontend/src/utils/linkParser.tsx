@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { Source } from '../types';
+import type { Source } from '../types';
 
 /**
  * Regular expression to match URLs

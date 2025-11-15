@@ -5,8 +5,8 @@
  * Handles request/response transformation and error handling.
  */
 
-import axios, { AxiosError } from 'axios';
-import type { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios from 'axios';
+import type { AxiosInstance } from 'axios';
 import type { ChatRequest, ChatResponse } from '../types';
 
 export interface ApiClientConfig {
@@ -43,13 +43,13 @@ export class ApiError extends Error {
 
 class ApiClient {
   private client: AxiosInstance | null = null;
-  private config: ApiClientConfig | null = null;
+  private _config: ApiClientConfig | null = null;
 
   /**
    * Initialize the API client with configuration
    */
   init(config: ApiClientConfig): void {
-    this.config = config;
+    this._config = config;
 
     this.client = axios.create({
       baseURL: config.baseURL,

@@ -1,0 +1,70 @@
+services:
+  # Backend Service - FastAPI Application
+  - type: web
+    name: faq-assistant-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      # Required Environment Variables
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
+      - key: LOG_LEVEL
+        value: INFO
+      
+      # CORS Configuration - Will be updated after frontend deployment
+      - key: CORS_ORIGINS
+        value: https://faq-assistant-frontend.onrender.com
+      
+      # Optional LLM Configuration
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: LLM_MODEL
+        value: gemini-pro
+      - key: LLM_TEMPERATURE
+        value: "0.1"
+      - key: LLM_MAX_TOKENS
+        value: "500"
+      
+      # RAG Configuration
+      - key: RAG_TOP_K
+        value: "5"
+      - key: RAG_SIMILARITY_THRESHOLD
+        value: "0.5"
+      
+      # Rate Limiting
+      - key: RATE_LIMIT_ENABLED
+        value: "true"
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "60"
+      - key: RATE_LIMIT_PER_HOUR
+        value: "1000"
+      
+      # Port Configuration (Render provides this automatically)
+      # Backend Dockerfile will be updated to use $PORT
+
+  # Frontend Service - React/Vite Application
+  - type: web
+    name: faq-assistant-frontend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.frontend
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /
+    envVars:
+      # API Base URL - Will be updated after backend deployment
+      # Format: https://faq-assistant-backend.onrender.com
+      - key: VITE_API_BASE_URL
+        value: https://faq-assistant-backend.onrender.com
+      
+      # Note: VITE_ prefixed variables are injected at build time
+      # After backend deployment, update this value with actual backend URL
+

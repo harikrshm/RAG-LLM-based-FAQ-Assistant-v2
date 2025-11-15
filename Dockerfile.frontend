@@ -4,6 +4,11 @@ FROM node:20-alpine AS builder
 # Set working directory
 WORKDIR /app
 
+# Accept build-time arguments for Vite environment variables
+# Render will provide these from render.yaml envVars
+ARG VITE_API_BASE_URL
+ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
+
 # Copy package files
 COPY frontend/package*.json ./
 
@@ -14,6 +19,7 @@ RUN npm ci
 COPY frontend/ ./
 
 # Build the application
+# VITE_ prefixed environment variables are injected at build time
 RUN npm run build
 
 # Production stage

@@ -5,8 +5,9 @@
  * Handles request/response transformation and error handling.
  */
 
-import axios, { AxiosInstance, AxiosError, AxiosRequestConfig } from 'axios';
-import { ChatRequest, ChatResponse } from '../types';
+import axios, { AxiosError } from 'axios';
+import type { AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { ChatRequest, ChatResponse } from '../types';
 
 export interface ApiClientConfig {
   baseURL: string;
@@ -61,9 +62,9 @@ class ApiClient {
 
     // Request interceptor for logging
     this.client.interceptors.request.use(
-      (config) => {
+      (requestConfig) => {
         // Optional: Add auth tokens, request IDs, etc.
-        return config;
+        return requestConfig;
       },
       (error) => {
         return Promise.reject(this.handleError(error));

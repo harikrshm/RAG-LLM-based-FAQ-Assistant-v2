@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { ChatHeaderProps } from '../../types';
+import type { ChatHeaderProps } from '../../types';
 import './ChatHeader.css';
 
 const ChatHeader: React.FC<ChatHeaderProps> = ({

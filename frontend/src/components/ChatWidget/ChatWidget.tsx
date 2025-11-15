@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChatWidgetProps, ChatState, Message } from '../../types';
+import type { ChatWidgetProps, ChatState, Message } from '../../types';
 import { generateId } from '../../utils/helpers';
 import { sendMessage, convertResponseToMessage, getErrorMessage } from '../../services/chatService';
 import { FloatingButton } from '../FloatingButton';

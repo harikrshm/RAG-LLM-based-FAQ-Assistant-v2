@@ -5,7 +5,7 @@
  */
 
 import React, { useState } from 'react';
-import { SourcesSectionProps, Source } from '../../types';
+import type { SourcesSectionProps, Source } from '../../types';
 import { isGrowwUrl, getDomainName } from '../../utils/linkParser';
 import './SourcesSection.css';
 

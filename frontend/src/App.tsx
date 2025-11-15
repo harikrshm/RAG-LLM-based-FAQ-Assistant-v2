@@ -6,7 +6,7 @@
 
 import React, { useEffect } from 'react';
 import { ChatWidget } from './components/ChatWidget';
-import { ChatWidgetConfig } from './types';
+import type { ChatWidgetConfig } from './types';
 import { initApiClient } from './services/apiClient';
 import './index.css';
 

@@ -2,7 +2,7 @@
  * TypeScript types for React components
  */
 
-import { Message, Source, ChatWidgetConfig } from './chat';
+import type { Message, Source, ChatWidgetConfig } from './chat';
 
 export interface ChatWidgetProps {
   config: ChatWidgetConfig;

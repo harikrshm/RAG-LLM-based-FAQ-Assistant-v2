@@ -5,7 +5,7 @@
  */
 
 import React, { useEffect, useRef } from 'react';
-import { MessageListProps } from '../../types';
+import type { MessageListProps } from '../../types';
 import { MessageBubble } from '../MessageBubble';
 import './MessageList.css';
 

@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { MessageBubbleProps } from '../../types';
+import type { MessageBubbleProps } from '../../types';
 import { formatTimestamp } from '../../utils/helpers';
 import { parseLinks, renderLinks } from '../../utils/linkParser';
 import { SourcesSection } from '../SourcesSection';

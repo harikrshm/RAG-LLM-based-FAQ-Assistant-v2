@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { FloatingButtonProps } from '../../types';
+import type { FloatingButtonProps } from '../../types';
 import './FloatingButton.css';
 
 const FloatingButton: React.FC<FloatingButtonProps> = ({

@@ -5,7 +5,7 @@
  */
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChatInputProps } from '../../types';
+import type { ChatInputProps } from '../../types';
 import './ChatInput.css';
 
 const ChatInput: React.FC<ChatInputProps> = ({

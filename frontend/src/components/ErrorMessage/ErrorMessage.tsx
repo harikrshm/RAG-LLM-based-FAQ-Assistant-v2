@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { ErrorMessageProps } from '../../types';
+import type { ErrorMessageProps } from '../../types';
 import './ErrorMessage.css';
 
 const ErrorMessage: React.FC<ErrorMessageProps> = ({

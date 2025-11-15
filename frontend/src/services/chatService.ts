@@ -5,7 +5,7 @@
  */
 
 import { getApiClient, ApiError } from './apiClient';
-import { ChatRequest, ChatResponse, Message, Source } from '../types';
+import type { ChatRequest, ChatResponse, Message, Source } from '../types';
 import { generateId } from '../utils/helpers';
 
 export interface SendMessageOptions {
@@ -61,7 +61,7 @@ export const sendMessage = async (
  */
 export const convertResponseToMessage = (
   response: ChatResponse,
-  query: string
+  _query: string
 ): Message => {
   // Convert sources from API format to Message format
   const sources: Source[] = response.sources.map((source) => ({

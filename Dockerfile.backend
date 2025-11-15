@@ -25,11 +25,14 @@ COPY backend/constraints.txt /app/constraints.txt
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt -c constraints.txt
 
-# Copy backend code
-COPY backend/ /app/
+# Copy backend code (preserve backend/ folder structure)
+COPY backend/ /app/backend/
 
 # Create necessary directories
 RUN mkdir -p /app/logs /app/chroma_db /app/data/knowledge_base
+
+# Set PYTHONPATH to include /app so backend module can be imported
+ENV PYTHONPATH=/app
 
 # Expose port
 EXPOSE 8000
@@ -41,5 +44,6 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 # Run the application
 # Render provides $PORT environment variable at runtime
 # Fallback to 8000 for local development
-CMD sh -c "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"
+# Use backend.main:app since backend/ folder is preserved
+CMD sh -c "uvicorn backend.main:app --host 0.0.0.0 --port ${PORT:-8000}"
 
